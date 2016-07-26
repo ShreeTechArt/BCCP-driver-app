@@ -1,0 +1,26 @@
+<ion-view title="Register">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+        <form class="list validate" ng-submit="submit(username, email, password, confirm_password)" >
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text"  name="username" ng-model="username" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" ng-model="email" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="password" ng-model="password" placeholder="">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Confirm Password</span>
+                    <input type="password" name="confirm_password" ng-model="confirm_password" placeholder="">
+                </label>
+                <input type="hidden" name="type" value="client">
+            </ion-list>
+            <button id="register-button3" class="button button-stable  button-block">Register</button>
+        </form>
+    </ion-content>
+</ion-view>

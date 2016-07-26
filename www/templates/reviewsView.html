@@ -1,0 +1,19 @@
+<ion-view title="View review">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+
+	<div class="card">
+  <div class="item item-divider">
+    {{params.by}}
+  </div>
+  <div class="item item-text-wrap">
+    {{params.content}}
+  </div>
+  <div class="item item-divider">
+		{{params.datetime}}
+  </div>
+	</div>
+
+
+      
+    </ion-content>
+</ion-view>

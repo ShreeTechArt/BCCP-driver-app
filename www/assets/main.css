@@ -1,0 +1,89 @@
+.button
+{
+  border-radius: 0px;
+}
+
+.button.button-positive
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button.button-stable
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button.button-positive.button-clear
+{
+  color: #61c190;
+}
+
+.button.button-royal
+{
+    background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button:hover
+{
+  border-radius: 0px;
+}
+
+.button.button-positive:hover
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button.button-stable:hover
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+
+
+.button.button-royal:hover
+{
+    background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button:active
+{
+  border-radius: 0px;
+}
+
+.button.button-positive:active
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button.button-stable:active
+{
+  background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}
+
+.button.button-positive.button-clear:active
+{
+  color: #61c190;
+}
+
+.button.button-royal:active
+{
+    background: #61c190;
+  background-color: #61c190;
+  color: #fff;
+}

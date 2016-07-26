@@ -1,0 +1,20 @@
+<ion-view title="Account settings">
+    <ion-content overflow-scroll="true" padding="true" scroll="true" class="has-header">
+
+        <form class="list"   ng-submit="submit(username, email)" enctype="multipart/form-data">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" name="username" ng-model="username" placeholder="" >
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" ng-model="email" placeholder="" >
+                </label>
+              
+								
+								
+            <button id="accountSettings-button9" class="button button-royal  button-block">Save</button>
+        </form>
+    </ion-content>
+</ion-view>
