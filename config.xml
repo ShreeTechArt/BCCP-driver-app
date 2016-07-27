@@ -19,7 +19,7 @@
     <!-- We'll include the Barcode plugin as an example -->
     <plugin name="cordova-plugin-console" spec="1.0.1" source="pgb" />
     <plugin name="cordova-plugin-device" spec="1.0.1" source="pgb" />
-    <plugin name="cordova-plugin-splashscreen" spec="2.1.0" source="pgb" />
+    <plugin name="org.apache.cordova.splashscreen" spec="1.0.0" source="pgb" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
 </widget>
