@@ -16,63 +16,15 @@
     S.S.Hussain
     </author>
 
-    <!-- We'll include the Barcode plugin as an example -->
-    <!--<plugin name="cordova-plugin-console" spec="1.0.1" source="pgb" />
-    <plugin name="cordova-plugin-device" spec="1.0.1" source="pgb" />
-    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
-    <plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
-    <plugin name="org.apache.cordova.splashscreen" source="pgb" /> --> -->
-    
-    <!--gap:plugin name="cordova-plugin-console"/>
+
+    <!-- Plugins -->
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="cordova-plugin-console"/>
     <gap:plugin name="cordova-plugin-device"/>
     <gap:plugin name="com.indigoway.cordova.whitelist.whitelistplugin"/>
     <gap:plugin name="com.phonegap.plugin.statusbar"/>
-    <gap:plugin name="org.apache.cordova.splashscreen" /-->
-    
-     <!-- Customize your app and platform with the preference element. -->
-    
-
-    <preference name="android-build-tool" value="gradle" />
-
-    <!-- Plugins -->
-
-    <!-- Core plugins -->
-    <gap:plugin name="org.apache.cordova.battery-status" />
-    <gap:plugin name="org.apache.cordova.camera" />
-    <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.device-motion" />
-    <gap:plugin name="org.apache.cordova.device-orientation" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.globalization" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.media" />
-    <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.vibration" />
-
-    <!--
-        Define access to external domains.
-
-        <access />            - a blank access tag denies access to all external resources.
-        <access origin="*" /> - a wildcard access tag allows access to all external resource.
-
-        Otherwise, you can specify specific domains:
-    -->
-
-    <access origin="*"/>
-
-    <!--
-        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
-        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
-        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
-    -->
-
-    
-    
+     <!-- Plugins -->
+     <!-- Customize your app and platform with the preference element. -->
+    <preference name="android-build-tool" value="gradle" />
 </widget>
