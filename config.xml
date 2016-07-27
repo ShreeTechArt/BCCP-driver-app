@@ -21,5 +21,5 @@
     <plugin name="cordova-plugin-device" spec="1.0.1" source="pgb" />
     <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
-    <plugin name="org.apache.cordova.splashscreen" spec="1.0.0" source="pgb" />
+    <plugin name="org.apache.cordova.splashscreen" source="pgb" />
 </widget>
