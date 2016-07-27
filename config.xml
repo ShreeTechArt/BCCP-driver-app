@@ -11,7 +11,8 @@
     <description>
       BCCP driver application
     </description>
-
+    <content src="www/index.html" />
+    <access origin="*" />
     <author href="https://build.phonegap.com" email="support@phonegap.com">
     S.S.Hussain
     </author>
