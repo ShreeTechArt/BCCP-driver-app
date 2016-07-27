@@ -456,7 +456,7 @@ angular.module('app.controllers', [])
                 PUT_PATH = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/geolocation/update';
 
 
-          $http.get(GET_PATH).then(function (response) {
+            $http.get(GET_PATH).then(function (response) {
                 var respLong = Number(response.data.longitude),
                     respLat = Number(response.data.latitude);
 
