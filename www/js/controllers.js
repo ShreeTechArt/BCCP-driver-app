@@ -3,7 +3,6 @@ angular.module('app.controllers', [])
 
 .controller('splashCtrl', function($scope, $state, $stateParams, $ionicPopup, $timeout, $http) {
 
-
 })
 
 .controller('registerCtrl', function($scope, $state, $stateParams, $ionicPopup, $timeout, $http) {
@@ -37,7 +36,7 @@ angular.module('app.controllers', [])
 
 
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/register';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/register';
 
         $http.post(url, input).then(function(response) {
             //success
@@ -81,19 +80,12 @@ angular.module('app.controllers', [])
 
     $scope.submit = function(username, password) {
 
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/login';
 
-
-
-        var input = {
-            username: username,
-            password: password
-        };
-
-
-
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/login';
-
-        $http.post(url, input).then(function(response) {
+        $http.post(url, {
+            "username": username,
+            "password": password
+        }).then(function(response) {
             //success
             var status = response.data.status + '!';
             status = status.trim();
@@ -140,7 +132,7 @@ angular.module('app.controllers', [])
 
 
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/forgot_password';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/forgot_password';
 
         $http.post(url, input).then(function(response) {
             //success
@@ -168,14 +160,12 @@ angular.module('app.controllers', [])
 
 .controller('menuCtrl', function($scope, $state, $stateParams, $ionicPopup, $timeout, $http) {
 
-
-
     $scope.logout = function() {
         var input = {
 
         };
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/logout';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/logout';
 
         $http.post(url, input).then(function(response) {
             //success
@@ -196,7 +186,6 @@ angular.module('app.controllers', [])
         });
     }
 
-
 })
 
 
@@ -209,7 +198,7 @@ angular.module('app.controllers', [])
 
         };
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/logout';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/logout';
 
         $http.post(url, input).then(function(response) {
             //success
@@ -247,7 +236,7 @@ angular.module('app.controllers', [])
     }
 
     //redirect to splash screen if not logged 
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -271,7 +260,7 @@ angular.module('app.controllers', [])
     //show data
     $scope.user_data = null;
 
-    var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url).then(function(response) {
         $scope.user_data = response.data;
@@ -311,7 +300,7 @@ angular.module('app.controllers', [])
 
 
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/save_account_settings';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/save_account_settings';
 
         $http.put(url, input).then(function(response) {
             //success
@@ -340,7 +329,7 @@ angular.module('app.controllers', [])
 
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -389,7 +378,7 @@ angular.module('app.controllers', [])
 
 
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/save_password';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/save_password';
 
         $http.put(url, input).then(function(response) {
             //success
@@ -412,48 +401,12 @@ angular.module('app.controllers', [])
 
 })
 
-// .controller('geolocationCtrl', function($scope, $state, $stateParams, $ionicPopup, $timeout, $http) {
-//
-//
-//     //redirect to splash screen if not logged innerHeight
-//     var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
-//
-//     $http.get(url_userdata).then(function(response) {
-//         var session_user_id = response.data.id
-//         var approved = response.data.approved
-//
-//         if (angular.isUndefined(session_user_id)) {
-//
-//             $state.go('splash');
-//
-//         }
-//         if (approved.trim() == 'no') {
-//             $state.go('notApproved');
-//         }
-//
-//     }).catch(function(response) {
-//
-//         showAlert('danger!', 'Some error occured. Please try again.');
-//     });
-//
-//
-//
-//     //popup alert starts here
-//     function showAlert(status, message) {
-//         $ionicPopup.alert({
-//             title: status,
-//             template: message,
-//         });
-//
-//     }
-//
-// })
     .controller('geolocationCtrl', [ '$scope', '$http', 'geolocationFactory',
         function($scope, $http, geolocationFactory) {
 
             // constants should be uppercase
-            var GET_PATH = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/geolocation',
-                PUT_PATH = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/geolocation/update';
+            var GET_PATH = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/geolocation',
+                PUT_PATH = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/geolocation/update';
 
 
             $http.get(GET_PATH).then(function (response) {
@@ -483,20 +436,27 @@ angular.module('app.controllers', [])
 
             setInterval(function () {
                 geolocationFactory.getCurrentPosition().then(function(location) {
-                    $scope.location = location;
+
+                    var newLatitude = location.coords.latitude,
+                        newLongitude = location.coords.longitude;
+
+                    // delete old marker
+                    $scope.marker.setMap(null);
                     $scope.marker = new google.maps.Marker({
                         position: {
-                            lat: $scope.location.coords.latitude,
-                            lng: $scope.location.coords.longitude
+                            lat: newLatitude,
+                            lng: newLongitude
                         }
                     });
-                    $scope.marker.setMap(null);
+                    var LatLng = new google.maps.LatLng(newLatitude, newLongitude);
+                    $scope.map.setCenter(LatLng);
                     $scope.marker.setMap($scope.map);
+
 
                     // send data to server
                     $http.put(PUT_PATH, {
-                        "longitude": JSON.stringify($scope.location.coords.latitude),
-                        "latitude": JSON.stringify($scope.location.coords.longitude)
+                        "longitude": newLatitude,
+                        "latitude": newLongitude
                     }).then(function (response) {
                         console.log('data sended');
                     }, function (errorResponse) {
@@ -505,31 +465,13 @@ angular.module('app.controllers', [])
                 }.bind(this));
             }, 5000);
 
-
-                // // get gata from server
-                // $http.get(GET_PATH).then(function (response) {
-                //     $scope.marker.setMap(null);
-                //     $scope.marker = new google.maps.Marker({
-                //         position: {
-                //             lat: response.data.latitude,
-                //             lng: response.data.longitude
-                //         }
-                //     });
-                //     $scope.marker.setMap($scope.map);
-                //
-                // }, function (errorResponse) {
-                //     console.error('error response ' + errorResponse);
-                // })
-
-            //});
-
         }])
 
 .controller('availabilityCtrl', function($scope, $state, $stateParams, $ionicPopup, $timeout, $http) {
 
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -545,7 +487,6 @@ angular.module('app.controllers', [])
         }
 
     }).catch(function(response) {
-
         showAlert('danger!', 'Some error occured. Please try again.');
     });
 
@@ -575,7 +516,7 @@ angular.module('app.controllers', [])
     }
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -612,7 +553,7 @@ angular.module('app.controllers', [])
     $scope.messages = null;
 
 
-    var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/messages';
+    var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/messages';
 
     $http.get(url).then(function(response) {
         $scope.messages = response.data;
@@ -647,7 +588,7 @@ angular.module('app.controllers', [])
 
     var get_username_by_id = function(id, retElem) {
 
-        var url_username = 'http://rest.radiumenterprises.co.uk/rest-all.php/admin/username_by_id/' + id;
+        var url_username = 'https://temp-bccp.radiumenterprises.co.uk/rest-all.php/admin/username_by_id/' + id;
 
         $http.get(url_username).then(function(response) {
             console.log(response);
@@ -689,7 +630,7 @@ angular.module('app.controllers', [])
 
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -748,7 +689,7 @@ angular.module('app.controllers', [])
     }
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -811,7 +752,7 @@ angular.module('app.controllers', [])
 
 
 
-        var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/message/reply';
+        var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/message/reply';
 
         $http.post(url, input).then(function(response) {
             //success
@@ -850,7 +791,7 @@ angular.module('app.controllers', [])
     }
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id
@@ -878,7 +819,7 @@ angular.module('app.controllers', [])
     //show data
 
 
-    var url = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/reviews';
+    var url = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/reviews';
 
     $http.get(url).then(function(response) {
         $scope.reviews = response.data;
@@ -911,7 +852,7 @@ angular.module('app.controllers', [])
 
     var get_username_by_id = function(id, retElem) {
 
-        var url_username = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/admin/username_by_id/' + id;
+        var url_username = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/admin/username_by_id/' + id;
 
         $http.get(url_username).then(function(response) {
             console.log(response);
@@ -952,7 +893,7 @@ angular.module('app.controllers', [])
 
 
     //redirect to splash screen if not logged innerHeight
-    var url_userdata = 'http://bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
+    var url_userdata = 'https://temp-bccp.radiumenterprises.co.uk/rest/rest.php/client/user_data';
 
     $http.get(url_userdata).then(function(response) {
         var session_user_id = response.data.id

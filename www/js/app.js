@@ -5,9 +5,10 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
+angular.module('app', ['ngStorage', 'ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $state, $localStorage) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,3 +21,9 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
   });
 })
+    .config(function ($httpProvider) {
+      $httpProvider.defaults.headers.common = {};
+      $httpProvider.defaults.headers.post = {};
+      $httpProvider.defaults.headers.put = {};
+      $httpProvider.defaults.headers.patch = {};
+    });
